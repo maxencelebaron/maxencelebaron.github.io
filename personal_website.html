@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maxence Tekou — Applied Mathematics & Machine Learning. PhD in Reinforcement Learning, Optimization, and Theoretical ML.">
+    <meta name="author" content="Maxence Tekou">
+    <meta property="og:title" content="Maxence Tekou">
+    <meta property="og:description" content="Applied Mathematics researcher. PhD position in RL, Optimization & Theoretical ML.">
+    <meta property="og:type" content="website">
+    <title>Maxence Tekou — Applied Mathematics & ML</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --text: #1a1a1a;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --bg: #fafafa;
+            --border: #e8e8e8;
+            --accent: #000;
+            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text: #f5f5f5;
+                --text-secondary: #b0b0b0;
+                --text-light: #808080;
+                --bg: #0f0f0f;
+                --border: #2a2a2a;
+                --accent: #fff;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 80px 0 60px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 80px;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color var(--transition);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        .logo {
+            color: var(--text);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            font-size: 16px;
+        }
+
+        .header-intro {
+            max-width: 700px;
+        }
+
+        .header-intro h1 {
+            font-size: 52px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .header-intro .name {
+            font-weight: 600;
+        }
+
+        .header-intro p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+
+        .contact-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color var(--transition);
+            position: relative;
+            padding-bottom: 2px;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-links a:hover {
+            color: var(--text);
+            border-bottom-color: var(--text);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 120px;
+        }
+
+        section h2 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Experience & Education */
+        .item {
+            margin-bottom: 48px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .item-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .item-date {
+            font-size: 14px;
+            color: var(--text-light);
+            letter-spacing: 0.5px;
+        }
+
+        .item-subtitle {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .item-description {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .item-description li {
+            margin-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* Skills */
+        .skill-category {
+            margin-bottom: 32px;
+        }
+
+        .skill-category-title {
+            font-weight: 500;
+            color: var(--text);
+            font-size: 14px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background-color: var(--border);
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            transition: all var(--transition);
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background-color: var(--accent);
+            color: var(--bg);
+        }
+
+        /* Projects placeholder */
+        .project-placeholder {
+            padding: 60px 24px;
+            background-color: var(--border);
+            border-radius: 8px;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0;
+            margin-top: 120px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            header {
+                padding: 60px 0 40px;
+                margin-bottom: 60px;
+            }
+
+            .header-intro h1 {
+                font-size: 36px;
+            }
+
+            .header-intro p {
+                font-size: 16px;
+            }
+
+            nav {
+                gap: 20px;
+            }
+
+            section {
+                margin-bottom: 80px;
+            }
+
+            section h2 {
+                font-size: 20px;
+                margin-bottom: 32px;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-date {
+                order: -1;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection */
+        ::selection {
+            background-color: var(--accent);
+            color: var(--bg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header id="top">
+            <nav>
+                <span class="logo">Maxence Tekou</span>
+                <a href="#research">Research</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#publications">Publications</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="header-intro">
+                <h1>
+                    <span class="name">Maxence Tekou</span><br>
+                    Applied Mathematics Researcher
+                </h1>
+                <p>
+                    Pursuing a PhD in Reinforcement Learning, Optimization, and Theoretical Machine Learning.
+                    Currently completing my M2 MVA at ENS Paris-Saclay, with research at Inria on neural
+                    architecture growth and deep learning theory.
+                </p>
+                <div class="contact-links" id="contact">
+                    <a href="mailto:tekoumax15@gmail.com">Email</a>
+                    <a href="https://github.com/maxencelebaron" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/pakomaxencetekou" target="_blank">LinkedIn</a>
+                    <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="research">
+            <h2>Research Interests</h2>
+            <div class="item-description">
+                <p>
+                    My research focuses on the theoretical foundations and practical algorithms for deep learning,
+                    with emphasis on:
+                </p>
+                <ul style="margin-top: 16px;">
+                    <li><strong>Neural Architecture Growth & Optimization:</strong> Principled criteria for expanding network capacity based on expressivity bottlenecks</li>
+                    <li><strong>Reinforcement Learning Theory:</strong> Policy optimization, plasticity, and sample efficiency in deep RL</li>
+                    <li><strong>Convex Optimization:</strong> Gradient methods and convergence analysis</li>
+                    <li><strong>Statistical Learning Theory:</strong> Generalization, regularization, and the interplay between optimization and statistics</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Machine Learning Research Intern</div>
+                        <div class="item-subtitle">Inria TAU Team · Paris-Saclay</div>
+                    </div>
+                    <div class="item-date">Apr – Sept 2026</div>
+                </div>
+                <div class="item-description">
+                    Topics: Convex Optimization, Reinforcement Learning, Neural Architecture Growth
+                    <ul style="margin-top: 12px;">
+                        <li>Contributed to principled neuron addition criteria based on expressivity bottlenecks for neural architecture growth</li>
+                        <li>Extended architecture growth framework to mitigate plasticity loss in deep RL policies</li>
+                        <li>Contributed to open-source Python library and improved neural network training efficiency on GPU clusters</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Data Science Intern</div>
+                        <div class="item-subtitle">Crédit Mutuel Arkéa · Brest</div>
+                    </div>
+                    <div class="item-date">May – Aug 2025</div>
+                </div>
+                <div class="item-description">
+                    Topics: Machine Learning, Clustering, Credit Risk Modeling
+                    <ul style="margin-top: 12px;">
+                        <li>Segmented 2600 loan contracts using K-means clustering to identify distinct repayment behavioral patterns</li>
+                        <li>Built decision tree and random forest classifiers for high recovery potential defaulted accounts</li>
+                        <li>Developed probabilistic recovery scoring model ranking defaulted loans by expected recovery amount</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">M2 MVA (Mathématiques, Vision, Apprentissage)</div>
+                        <div class="item-subtitle">École Normale Supérieure Paris-Saclay</div>
+                    </div>
+                    <div class="item-date">Sept 2025 – Sept 2026</div>
+                </div>
+                <div class="item-description">
+                    Competitive selection from ENSAI engineering programme. Topics: Convex Optimization,
+                    Signal Processing, Optimal Transport, Reinforcement Learning, Stochastic Calculus,
+                    Generative Modelling, Representation Learning, Time Series Analysis, Computational Statistics.
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Cycle Ingénieur (Engineering Programme)</div>
+                        <div class="item-subtitle">ENSAI — Rennes</div>
+                    </div>
+                    <div class="item-date">Sept 2023 – Sept 2025</div>
+                </div>
+                <div class="item-description">
+                    Bachelor's and Master's degree in Applied Mathematics and Computer Science.
+                    Topics: Statistical and Deep Learning, NLP, Algorithms, Stochastic Processes, Economics.
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">CPGE MPSI/MP*</div>
+                        <div class="item-subtitle">Lycée Albert Schweitzer · Mulhouse</div>
+                    </div>
+                    <div class="item-date">Sept 2020 – Sept 2023</div>
+                </div>
+                <div class="item-description">
+                    French Preparatory Classes for Elite Graduate Schools.
+                    Rigorous training in Mathematics, Physics, and Computer Science.
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications & Research</h2>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Should I train or should I grow? Single-Run Architecture Search by Network Growth</div>
+                    </div>
+                    <div class="item-date">NeurIPS 2026 (under review)</div>
+                </div>
+                <div class="item-description">
+                    S. Douka, A. Davey, S. Rivaud, T. Rudkiewicz, P. M. Tekou, et al.
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">GrowRA: Growing and Allocating LoRA Rank with a Natural-Gradient Criterion</div>
+                    </div>
+                    <div class="item-date">NeurIPS 2026 (under review)</div>
+                </div>
+                <div class="item-description">
+                    T. Rudkiewicz, H. Mousset, E. Saad, A. Shilova, A. Davey, S. Rivaud, S. Douka, P. M. Tekou, et al.
+                </div>
+            </div>
+
+            <div class="item" style="border-bottom: none;">
+                <div class="item-description">
+                    <strong>Academic Projects:</strong> Optimization and Statistical Learning (gradient boosting from scratch),
+                    Reinforcement Learning (Q-Learning and Double DQN on MinAtar), Software Engineering (interactive Rocket League
+                    platform with real-time database).
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+
+            <div class="skill-category">
+                <div class="skill-category-title">Languages</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">French (Native)</span>
+                    <span class="skill-tag">English (Upper-Intermediate)</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-category-title">Programming</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-category-title">Tools & Infrastructure</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">MLOps (W&B, MLflow)</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Hydra</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GPU Clusters</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-category-title">Specializations</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">Reinforcement Learning</span>
+                    <span class="skill-tag">Optimization</span>
+                    <span class="skill-tag">Neural Networks</span>
+                    <span class="skill-tag">Statistical Learning</span>
+                    <span class="skill-tag">Signal Processing</span>
+                    <span class="skill-tag">Stochastic Processes</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-category-title">Soft Skills</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Team Collaboration</span>
+                    <span class="skill-tag">Scientific Communication</span>
+                    <span class="skill-tag">Autonomous Problem-Solving</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="project-placeholder">
+                <p>Project section coming soon. Check back during the PhD to see research implementations and contributions.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Built with care. © 2026 Maxence Tekou · <a href="https://github.com/maxencelebaron" target="_blank" style="color: inherit; text-decoration: underline;">GitHub</a></p>
+    </footer>
+</body>
+</html>
