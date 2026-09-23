@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <script>
+    (function(){
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research - Maxence TEKOU</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Inter:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div id="progress-bar"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav class="topnav">
+    <div class="nav-left">
+      <a href="index.html" class="nav-brand">Maxence TEKOU</a>
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon icon-moon"></i>
+        <i class="fa-solid fa-sun  icon-sun"></i>
+      </button>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="research.html">Research</a>
+      <a href="cv.html">CV</a>
+      <a href="publications.html">Publications</a>
+      <!-- <a href="talks.html">Talks</a> -->
+      <a href="projects.html">Projects</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="CV_PakoMaxence_Tekou.pdf" target="_blank" class="nav-cta"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header reveal">
+      <div class="section-header">
+<h2><i class="fa-solid fa-flask-vial fa-sm"></i> Research Motivations & Core Research Interests</h2>
+      </div>
+    </div>
+
+    <section>
+      <div class="item reveal reveal-d1">
+        <div class="item-description">
+          <p style="margin-bottom: 14px;">
+                My goal is to develop new algorithms for Reinforcement Learning and Sequential decision-making.
+                I am particularly interested in understanding the theoretical properties of learning algorithms and using these
+                insights to guide algorithm design.
+            <br>
+                In this context it can be useful to study simpler settings before addressing the full complexity of Reinforcement Learning.
+                In particular, bandit problems provide a tractable framework for studying fundamental questions such as convergence,
+                regret guarantees, stability, and learning dynamics. The goal is then to determine which of these insights
+                can be transferred to more general Markov decision processes and used to develop new Reinforcement Learning
+                algorithms.
+              <br>
+                My background in Machine Learning also motivates my interest in Deep Reinforcement
+                Learning. More broadly, I am interested in Deep Learning, particularly its theory and the design of new architectures
+                for different learning tasks, both within and beyond Sequential decision-making.
+            </p>
+          <div class="bullet-lists-row">
+            <ul class="bullet-list">
+              <li><strong>Statistics & Learning Theory</strong></li>
+              <li><strong>Online Learning</strong></li>
+              <li><strong>Multi-Armed Bandit</strong></li>
+              <li><strong>(Deep) Reinforcement Learning</strong></li>
+              <li><strong>Machine Learning</strong></li>
+              <li><strong>Optimization & Online Convex Optimization</strong></li>
+            </ul>
+
+            <ul class="bullet-list">
+              <li><strong>Deep Learning</strong></li>
+              <li><strong>Representation Learning</strong></li>
+              <li><strong>Kernel methods</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-header reveal">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-compass fa-sm"></i> Broader Research Interests</h2>
+      </div>
+    </div>
+
+    <section>
+      <div class="item reveal reveal-d1">
+        <div class="item-header">
+        </div>
+        <div class="item-description">
+          <ul style="margin-top: 10px;">
+            <li><strong>Stochastic Calculus and Bayesian statistics.</strong>
+              <br>My background in statistics led me to develop a strong interest in
+              probability and stochastic processes. This naturally connects to Stochastic Calculus
+              and MCMC, which also provide useful tools for optimization and the analysis of learning
+              algorithms. I am also interested in Bayesian methods for uncertainty quantification and sequential decision-making.
+            </li>
+            <li><strong>Time Series and Graphs.</strong>
+              <br>I am particularly interested in learning problems involving data with specific
+              underlying structures. My interest in time series developed during my studies at ENSAI,
+              particularly through coursework in economics and finance. I am interested in online learning for sequentially evolving data,
+              beyond classical approaches to time series analysis. I am also interested
+              in machine learning on graphs, particularly in the context of bandit problems, where graph structure can be
+              incorporated into the learning process.
+            </li>
+            <li><strong>Graph Signal Processing.</strong>
+              <br>I am interested in Graph Signal Processing as a framework for analyzing and
+              learning from signals defined over graph-structured data. In particular, I am interested in dynamic graphs, where both the
+              graph structure and the associated signals evolve over time, and in the use of graph-based representations in Reinforcement
+              Learning and Sequential decision-making.
+            </li>
+          </ul>
+          <div class="bullet-lists-row">
+            <ul class="bullet-list">
+              <li><strong>Graph & Signal Processing</strong></li>
+              <li><strong>Stochastic Calculus</strong></li>
+              <li><strong>MCMC</strong></li>
+              <li><strong>Bayesian methods</strong></li>
+            </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-socials">
+        <a href="mailto:tekoumax15@gmail.com" class="footer-social-link" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/maxencelebaron" target="_blank" class="footer-social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/pakomaxencetekou" target="_blank" class="footer-social-link" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://scholar.google.com" target="_blank" class="footer-social-link" title="Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="https://x.com/MaxenceT6" target="_blank" class="footer-social-link" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p class="footer-status">now: research engineer · inria paris-saclay</p>
+      <p class="footer-copy">© 2026 Maxence Tekou &nbsp;·&nbsp; Built with care</p>
+    </div>
+  </footer>
+
+  <script src="canvas.js"></script>
+  <script src="shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <script>
+    (function(){
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications - Maxence TEKOU</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Inter:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div id="progress-bar"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav class="topnav">
+    <div class="nav-left">
+      <a href="index.html" class="nav-brand">Maxence TEKOU</a>
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon icon-moon"></i>
+        <i class="fa-solid fa-sun  icon-sun"></i>
+      </button>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="research.html">Research</a>
+      <a href="cv.html">CV</a>
+      <a href="publications.html">Publications</a>
+      <!-- <a href="talks.html">Talks</a> -->
+      <a href="projects.html">Projects</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="CV_PakoMaxence_Tekou.pdf" target="_blank" class="nav-cta"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header reveal">
+      <div class="section-header">
+<h2><i class="fa-solid fa-book-open fa-sm"></i> Publications</h2>
+      </div>
+    </div>
+
+    <section>
+      <div class="item reveal reveal-d1">
+        <div class="item-header">
+          <div class="item-title">Should I train or should I grow? Single-Run Architecture Search by Network Growth</div>
+          <div class="item-date pending">NeurIPS 2026 · under review</div>
+        </div>
+        <div class="item-description" style="margin-top: 8px;">
+          S. Douka, A. Davey, S. Rivaud, T. Rudkiewicz, <strong>P. M. Tekou</strong>, et al.
+        </div>
+        <div class="badges">
+          <span class="badge venue">NeurIPS 2026</span>
+          <span class="badge status">Under Review</span>
+        </div>
+      </div>
+
+      <div class="item reveal reveal-d2">
+        <div class="item-header">
+          <div class="item-title">GrowRA: Growing and Allocating LoRA Rank with a Natural-Gradient Criterion</div>
+          <div class="item-date pending">NeurIPS 2026 · under review</div>
+        </div>
+        <div class="item-description" style="margin-top: 8px;">
+          T. Rudkiewicz, H. Mousset, E. Saad, A. Shilova, A. Davey, S. Rivaud, S. Douka, <strong>P. M. Tekou</strong>, et al.
+        </div>
+        <div class="badges">
+          <span class="badge venue">NeurIPS 2026</span>
+          <span class="badge status">Under Review</span>
+        </div>
+      </div>
+
+      <div class="item reveal reveal-d3">
+        <div class="item-description">
+          <strong>Academic Projects:</strong> Optimization and Statistical Learning (gradient boosting from scratch),
+          Reinforcement Learning (Q-Learning and Double DQN on MinAtar), Software Engineering (interactive Rocket League
+          platform with real-time database).
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-socials">
+        <a href="mailto:tekoumax15@gmail.com" class="footer-social-link" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/maxencelebaron" target="_blank" class="footer-social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/pakomaxencetekou" target="_blank" class="footer-social-link" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://scholar.google.com" target="_blank" class="footer-social-link" title="Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="https://x.com/MaxenceT6" target="_blank" class="footer-social-link" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p class="footer-status">now: research engineer · inria paris-saclay</p>
+      <p class="footer-copy">© 2026 Maxence Tekou &nbsp;·&nbsp; Built with care</p>
+    </div>
+  </footer>
+
+  <script src="canvas.js"></script>
+  <script src="shared.js"></script>
+</body>
+</html>

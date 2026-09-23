@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <script>
+    (function(){
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Maxence TEKOU</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Inter:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div id="progress-bar"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav class="topnav">
+    <a href="index.html" class="nav-brand">Maxence TEKOU</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html"><i class="fa-solid fa-house fa-xs"></i> Home</a>
+        <a href="research.html"><i class="fa-solid fa-flask-vial fa-xs"></i> Research</a>
+        <a href="experience.html"><i class="fa-solid fa-briefcase fa-xs"></i> Experience</a>
+        <a href="education.html"><i class="fa-solid fa-graduation-cap fa-xs"></i> Education</a>
+        <a href="publications.html"><i class="fa-solid fa-book-open fa-xs"></i> Publications</a>
+        <a href="talks.html"><i class="fa-solid fa-microphone-lines fa-xs"></i> Talks</a>
+        <a href="projects.html"><i class="fa-solid fa-code-branch fa-xs"></i> Projects</a>
+        <a href="teaching.html"><i class="fa-solid fa-chalkboard-user fa-xs"></i> Teaching</a>
+        <a href="contact.html"><i class="fa-solid fa-envelope fa-xs"></i> Contact</a>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon icon-moon"></i>
+        <i class="fa-solid fa-sun  icon-sun"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header reveal">
+      <div class="section-header">
+        <span class="section-tag">Contact</span>
+        <h2>Contact</h2>
+      </div>
+    </div>
+
+    <section>
+      <div class="contact-links reveal reveal-d1">
+        <a href="mailto:tekoumax15@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://github.com/maxencelebaron" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://linkedin.com/in/pakomaxencetekou" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://scholar.google.com" target="_blank"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2026 Maxence Tekou &nbsp;·&nbsp; Built with care</p>
+  </footer>
+
+  <script src="canvas.js"></script>
+  <script src="shared.js"></script>
+</body>
+</html>

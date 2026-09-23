@@ -1,615 +1,210 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pako Maxence TEKOU - Applied Mathematics & Machine Learning. PhD in
-    Online learning (Multi-armed bandits), Reinforcement Learning and Optimization">
-    <meta name="author" content="Pako Maxence TEKOU">
-    <meta property="og:title" content="Pako Maxence TEKOU">
-    <meta property="og:description" content="Applied Mathematics researcher. PhD position in RL, Optimization & Theoretical ML.">
-    <meta property="og:type" content="website">
-    <title>Pako Maxence TEKOU - Applied Mathematics & ML</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <script>
+    (function(){
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maxence TEKOU - PhD student in Online Learning, Multi-Armed Bandits, Reinforcement Learning and Optimization">
+  <meta name="author" content="Maxence TEKOU">
+  <meta property="og:title" content="Maxence TEKOU">
+  <meta property="og:description" content="PhD student in Online Learning, RL & Optimization.">
+  <meta property="og:type" content="website">
+  <title>Maxence TEKOU</title>
 
-        :root {
-            --text: #1a1a1a;
-            --text-secondary: #666666;
-            --text-light: #999999;
-            --bg: #fafafa;
-            --border: #e8e8e8;
-            --accent: #000;
-            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --text: #f5f5f5;
-                --text-secondary: #b0b0b0;
-                --text-light: #808080;
-                --bg: #0f0f0f;
-                --border: #2a2a2a;
-                --accent: #fff;
-            }
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            font-size: 16px;
-            overflow-x: hidden;
-        }
-
-        /* Layout */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        header {
-            padding: 80px 0 60px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 80px;
-        }
-
-        nav {
-            display: flex;
-            gap: 32px;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: color var(--transition);
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: var(--text);
-        }
-
-        .logo {
-            color: var(--text);
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            font-size: 16px;
-        }
-
-        .header-intro {
-            max-width: 700px;
-        }
-
-        .header-intro h1 {
-            font-size: 52px;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            font-weight: 300;
-            letter-spacing: -1px;
-        }
-
-        .header-intro .name {
-            font-weight: 600;
-        }
-
-        .header-intro p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 32px;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            font-size: 14px;
-        }
-
-        .contact-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            transition: color var(--transition);
-            position: relative;
-            padding-bottom: 2px;
-            border-bottom: 1px solid transparent;
-        }
-
-        .contact-links a:hover {
-            color: var(--text);
-            border-bottom-color: var(--text);
-        }
-
-        /* Sections */
-        section {
-            margin-bottom: 120px;
-        }
-
-        section h2 {
-            font-size: 24px;
-            font-weight: 300;
-            letter-spacing: -0.5px;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        /* Experience & Education */
-        .item {
-            margin-bottom: 48px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .item:last-child {
-            border-bottom: none;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .item-title {
-            font-size: 18px;
-            font-weight: 500;
-            color: var(--text);
-        }
-
-        .item-date {
-            font-size: 14px;
-            color: var(--text-light);
-            letter-spacing: 0.5px;
-        }
-
-        .item-subtitle {
-            font-size: 15px;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
-
-        .item-description {
-            color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        .item-description li {
-            margin-left: 20px;
-            margin-bottom: 8px;
-        }
-
-        /* Teaching */
-        .teaching-category {
-            margin-bottom: 32px;
-        }
-
-        .teaching-category-title {
-            font-weight: 500;
-            color: var(--text);
-            font-size: 14px;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
-
-        .teaching-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .teaching-tag {
-            background-color: var(--border);
-            color: var(--text-secondary);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            transition: all var(--transition);
-            cursor: default;
-        }
-
-        .teaching-tag:hover {
-            background-color: var(--accent);
-            color: var(--bg);
-        }
-
-        /* Projects placeholder */
-        .project-placeholder {
-            padding: 60px 24px;
-            background-color: var(--border);
-            border-radius: 8px;
-            text-align: center;
-            color: var(--text-secondary);
-        }
-
-        /* Footer */
-        footer {
-            padding: 80px 0;
-            margin-top: 120px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-light);
-        }
-
-        /* Responsive */
-        @media (max-width: 700px) {
-            .container {
-                padding: 0 16px;
-            }
-
-            header {
-                padding: 60px 0 40px;
-                margin-bottom: 60px;
-            }
-
-            .header-intro h1 {
-                font-size: 36px;
-            }
-
-            .header-intro p {
-                font-size: 16px;
-            }
-
-            nav {
-                gap: 20px;
-            }
-
-            section {
-                margin-bottom: 80px;
-            }
-
-            section h2 {
-                font-size: 20px;
-                margin-bottom: 32px;
-            }
-
-            .item-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .item-date {
-                order: -1;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Selection */
-        ::selection {
-            background-color: var(--accent);
-            color: var(--bg);
-        }
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Inter:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <header id="top">
-            <nav>
-                <span class="logo">Pako Maxence TEKOU</span>
-                <a href="#research">Research</a>
-                <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
-                <a href="#publications">Publications</a>
-                <a href="#teaching">Teaching</a>
-                <a href="#talks">Talks</a>
-                <a href="#contact">Contact</a>
-            </nav>
 
-            <div class="header-intro">
-                <h1>
-                    <span class="name">Pako Maxence Tekou</span><br>
-                    Applied Mathematics Researcher
-                </h1>
-                <p>
-                    I am pursuing a PhD in Applied Mathematics and Computer Science within the GHOST team, a joint research team of
-                    Inria, Université Grenoble Alpes, and CNRS. My research focuses on Online Learning, Reinforcement Learning, and
-                    Optimization, with an emphasis on policy gradient methods, under the supervision of Dorian Baudry and Bruno Gaujal.
+  <div id="progress-bar"></div>
+  <canvas id="bg-canvas"></canvas>
 
-                    Prior to my PhD, I completed two years of engineering studies at ENSAI, a French engineering school offering
-                    multidisciplinary training in applied mathematics and statistics, computer science (machine learning and AI),
-                    and economics. I then pursued the MVA Master's degree at ENS Paris-Saclay, a renowned research-oriented master's
-                    program in applied mathematics and AI.
-
-                    Before joining ENSAI, I grew up in Togo, where I played basketball at the national level during high school,
-                    before moving to France to undertake two years of intensive training in mathematics, physics, and computer science,
-                    preparing for the highly competitive entrance examinations to France's leading engineering schools.
-
-
-                    In practice, my goal is to develop new algorithms for reinforcement learning and sequential decision-making.
-                    I am particularly interested in understanding the theoretical properties of learning algorithms and using these
-                    insights to guide algorithm design. My background in machine learning also motivates my interest in combining
-                    modern deep learning methods with theoretical approaches to reinforcement learning. In this context,
-                    I am also interested in Bayesian methods, which provide a natural framework for quantifying uncertainty and
-                    leveraging this uncertainty for efficient exploration.
-
-                    I find it useful to study simpler settings before addressing the full complexity of reinforcement learning.
-                    In particular, bandit problems provide a tractable framework for studying fundamental questions such as convergence,
-                    regret guarantees, stability, and learning dynamics. The goal is then to determine which of these insights
-                    can be transferred to more general Markov decision processes and used to develop new reinforcement learning
-                    algorithms.
-
-                    Core research interests
-                    Online Learning and Learning Theory
-                    Multi-Armed Bandit Theory
-                    (Deep) Reinforcement Learning
-                    Machine Learning and Deep Learning, with a particular interest in theory and Representation Learning
-                    Optimization and Online Convex Optimization
-                    Statistics
-                    Bayesian Machine Learning
-
-
-
-                    Broader research interests
-                    Structured Data: Time Series and Graphs. My interest in time series developed during my studies at ENSAI,
-                    particularly through coursework in economics and finance. Beyond classical methods for time series analysis,
-                    I am also interested in the application of online learning to sequentially evolving data. I am also interested
-                    in machine learning on graphs, particularly in the context of bandit problems, where graph structure can be
-                    incorporated into the learning process.
-
-                    Graph Signal Processing. My interest in Graph Signal Processing naturally stems from my broader interest in
-                    structured data, particularly time series and graphs. I find it especially interesting as a framework for studying
-                    signals defined over graph-structured data, and for its connections with machine learning on graphs and reinforcement
-                    learning. In particular, I am interested in applications involving dynamic graphs and the use of graph-based
-                    representations in reinforcement learning, including real-world and industrial-scale problems.
-
-                    Stochastic Calculus and Bayesian Methods. My background in statistics led me to develop a strong interest in
-                    probability and stochastic processes. This naturally connects to Stochastic Calculus, Stochastic Approximation,
-                    and MCMC, which also provide useful tools for Bayesian inference, optimization, and the analysis of learning
-                    algorithms.
-                </p>
-            </div>
-        </header>
-
-        <section id="research">
-            <h2>Research Interests</h2>
-            <div class="item-description">
-                <p>
-                    My research focuses on the theoretical foundations and practical algorithms for deep learning,
-                    with emphasis on:
-                </p>
-                <ul style="margin-top: 16px;">
-                    <li><strong>Neural Architecture Growth & Optimization:</strong> Principled criteria for expanding network capacity based on expressivity bottlenecks</li>
-                    <li><strong>Reinforcement Learning Theory:</strong> Policy optimization, plasticity, and sample efficiency in deep RL</li>
-                    <li><strong>Convex Optimization:</strong> Gradient methods and convergence analysis</li>
-                    <li><strong>Statistical Learning Theory:</strong> Generalization, regularization, and the interplay between optimization and statistics</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2>Experience</h2>
-
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">Machine Learning Research Intern</div>
-                        <div class="item-subtitle">Inria TAU Team · Paris-Saclay</div>
-                    </div>
-                    <div class="item-date">Apr – Sept 2026</div>
-                </div>
-                <div class="item-description">
-                    Topics: Convex Optimization, Reinforcement Learning, Neural Architecture Growth
-                    <ul style="margin-top: 12px;">
-                        <li>Contributed to principled neuron addition criteria based on expressivity bottlenecks for neural architecture growth</li>
-                        <li>Extended architecture growth framework to mitigate plasticity loss in deep RL policies</li>
-                        <li>Contributed to open-source Python library and improved neural network training efficiency on GPU clusters</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">Data Science Intern</div>
-                        <div class="item-subtitle">Crédit Mutuel Arkéa · Brest</div>
-                    </div>
-                    <div class="item-date">May – Aug 2025</div>
-                </div>
-                <div class="item-description">
-                    Topics: Machine Learning, Clustering, Credit Risk Modeling
-                    <ul style="margin-top: 12px;">
-                        <li>Segmented 2600 loan contracts using K-means clustering to identify distinct repayment behavioral patterns</li>
-                        <li>Built decision tree and random forest classifiers for high recovery potential defaulted accounts</li>
-                        <li>Developed probabilistic recovery scoring model ranking defaulted loans by expected recovery amount</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">M2 MVA (Mathématiques, Vision, Apprentissage)</div>
-                        <div class="item-subtitle">École Normale Supérieure Paris-Saclay</div>
-                    </div>
-                    <div class="item-date">Sept 2025 – Sept 2026</div>
-                </div>
-                <div class="item-description">
-                    Competitive selection from ENSAI engineering programme. Topics: Convex Optimization,
-                    Signal Processing, Optimal Transport, Reinforcement Learning, Stochastic Calculus,
-                    Generative Modelling, Representation Learning, Time Series Analysis, Computational Statistics.
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">Cycle Ingénieur (Engineering Programme)</div>
-                        <div class="item-subtitle">ENSAI - Rennes</div>
-                    </div>
-                    <div class="item-date">Sept 2023 – Sept 2025</div>
-                </div>
-                <div class="item-description">
-                    Bachelor's and Master's degree in Applied Mathematics and Computer Science.
-                    Topics: Statistical and Deep Learning, NLP, Algorithms, Stochastic Processes, Economics.
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">CPGE MPSI/MP*</div>
-                        <div class="item-subtitle">Lycée Albert Schweitzer · Mulhouse</div>
-                    </div>
-                    <div class="item-date">Sept 2020 – Sept 2023</div>
-                </div>
-                <div class="item-description">
-                    French Preparatory Classes for Elite Graduate Schools.
-                    Rigorous training in Mathematics, Physics, and Computer Science.
-                </div>
-            </div>
-        </section>
-
-        <section id="publications">
-            <h2>Publications & Research</h2>
-
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">Should I train or should I grow? Single-Run Architecture Search by Network Growth</div>
-                    </div>
-                    <div class="item-date">NeurIPS 2026 (under review)</div>
-                </div>
-                <div class="item-description">
-                    S. Douka, A. Davey, S. Rivaud, T. Rudkiewicz, P. M. Tekou, et al.
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">GrowRA: Growing and Allocating LoRA Rank with a Natural-Gradient Criterion</div>
-                    </div>
-                    <div class="item-date">NeurIPS 2026 (under review)</div>
-                </div>
-                <div class="item-description">
-                    T. Rudkiewicz, H. Mousset, E. Saad, A. Shilova, A. Davey, S. Rivaud, S. Douka, P. M. Tekou, et al.
-                </div>
-            </div>
-
-            <div class="item" style="border-bottom: none;">
-                <div class="item-description">
-                    <strong>Academic Projects:</strong> Optimization and Statistical Learning (gradient boosting from scratch),
-                    Reinforcement Learning (Q-Learning and Double DQN on MinAtar), Software Engineering (interactive Rocket League
-                    platform with real-time database).
-                </div>
-            </div>
-        </section>
-
-        <section id="teaching">
-            <h2>Teaching & Expertise</h2>
-
-            <div class="teaching-category">
-                <div class="teaching-category-title">Languages</div>
-                <div class="teaching-tags">
-                    <span class="teaching-tag">French (Native)</span>
-                    <span class="teaching-tag">English (Upper-Intermediate)</span>
-                </div>
-            </div>
-
-            <div class="teaching-category">
-                <div class="teaching-category-title">Programming</div>
-                <div class="teaching-tags">
-                    <span class="teaching-tag">Python</span>
-                    <span class="teaching-tag">PyTorch</span>
-                    <span class="teaching-tag">NumPy</span>
-                    <span class="teaching-tag">Pandas</span>
-                    <span class="teaching-tag">Scikit-learn</span>
-                    <span class="teaching-tag">Java</span>
-                    <span class="teaching-tag">R</span>
-                    <span class="teaching-tag">SQL</span>
-                </div>
-            </div>
-
-            <div class="teaching-category">
-                <div class="teaching-category-title">Tools & Infrastructure</div>
-                <div class="teaching-tags">
-                    <span class="teaching-tag">MLOps (W&B, MLflow)</span>
-                    <span class="teaching-tag">Docker</span>
-                    <span class="teaching-tag">Hydra</span>
-                    <span class="teaching-tag">Git</span>
-                    <span class="teaching-tag">GPU Clusters</span>
-                </div>
-            </div>
-
-            <div class="teaching-category">
-                <div class="teaching-category-title">Specializations</div>
-                <div class="teaching-tags">
-                    <span class="teaching-tag">Deep Learning</span>
-                    <span class="teaching-tag">Reinforcement Learning</span>
-                    <span class="teaching-tag">Optimization</span>
-                    <span class="teaching-tag">Neural Networks</span>
-                    <span class="teaching-tag">Statistical Learning</span>
-                    <span class="teaching-tag">Signal Processing</span>
-                    <span class="teaching-tag">Stochastic Processes</span>
-                </div>
-            </div>
-
-            <div class="teaching-category">
-                <div class="teaching-category-title">Soft Teaching</div>
-                <div class="teaching-tags">
-                    <span class="teaching-tag">Team Collaboration</span>
-                    <span class="teaching-tag">Scientific Communication</span>
-                    <span class="teaching-tag">Autonomous Problem-Solving</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="talks">
-            <h2>MEDIA & TALKS</h2>
-            <div class="project-placeholder">
-                <p>Media appearances and talks will be added soon.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Projects</h2>
-            <div class="project-placeholder">
-                <p>Project section coming soon. Check back during the PhD to see research implementations and contributions.</p>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-links">
-                <a href="mailto:tekoumax15@gmail.com">Email</a>
-                <a href="https://github.com/maxencelebaron" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/pakomaxencetekou" target="_blank">LinkedIn</a>
-                <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
-            </div>
-        </section>
+  <nav class="topnav">
+    <div class="nav-left">
+      <a href="index.html" class="nav-brand">Maxence TEKOU</a>
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon icon-moon"></i>
+        <i class="fa-solid fa-sun  icon-sun"></i>
+      </button>
     </div>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="research.html">Research</a>
+      <a href="cv.html">CV</a>
+      <a href="publications.html">Publications</a>
+      <!-- <a href="talks.html">Talks</a> -->
+      <a href="projects.html">Projects</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="CV_PakoMaxence_Tekou.pdf" target="_blank" class="nav-cta"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+    </div>
+  </nav>
 
-    <footer>
-        <p>Built with care. © 2026 Maxence Tekou · <a href="https://github.com/maxencelebaron" target="_blank" style="color: inherit; text-decoration: underline;">GitHub</a></p>
-    </footer>
+  <div class="container">
+
+    <header>
+      <div class="hero-grid">
+
+        <div class="hero-photo-col reveal">
+          <div class="hero-photo-wrap">
+            <img src="assets/photo_identite_pako_tekou.jpg" alt="Maxence Tekou" class="hero-photo">
+          </div>
+        </div>
+
+        <div class="hero-text-col">
+          <div class="hero-badge reveal">
+            <span class="dot"></span>
+            AI Researcher · Inria GHOST Team · Université Grenoble Alpes
+          </div>
+
+          <h1 class="hero-title reveal reveal-d1">
+            Maxence TEKOU
+          </h1>
+
+          <p class="hero-bio reveal reveal-d2">
+            Machine Learning PhD student supervised by <strong><a href="https://dbaudry.github.io/" target="_blank" rel="noopener">Dorian Baudry</a></strong>
+            and <strong><a href="https://team.inria.fr/polaris/members/bruno-gaujal/" target="_blank" rel="noopener">Bruno Gaujal</a></strong> within the <strong><a href="https://ghost-team.gitlabpages.inria.fr/" target="_blank" rel="noopener">GHOST
+            team</a></strong> (Inria | Université Grenoble Alpes (UGA) | CNRS), working on <span class="hl" style="--hue:172;--tilt:-0.8deg;--drift:-1s">Online Learning</span>, <span class="hl" style="--hue:260;--tilt:1deg;--drift:-3s">Reinforcement Learning</span>, and <span class="hl" style="--hue:145;--tilt:-1.2deg;--drift:-5s">Optimization</span>.
+            Interested in designing novel algorithms to optimize <span class="hl" style="--hue:172;--tilt:-0.8deg;--drift:-0.5s">planning</span> and
+            <span class="hl" style="--hue:260;--tilt:-1deg;--drift:0s">sequential decision-making</span>, both in theory and in various
+            industry applications. Also deeply interested in the use of <span class="hl" style="--hue:145;--tilt:1.2deg;--drift:-2s">Deep
+            Learning</span> in these areas and, more generally, its theory and the design of novel AI system architectures.
+          <br>
+            For a detailed overview of my research interests, see the <a href="research.html">Research</a> page.
+          </p>
+
+          <div class="hero-links reveal reveal-d3">
+            <a href="research.html" class="btn-primary">
+              <i class="fa-solid fa-flask-vial fa-sm"></i> Research
+            </a>
+            <a href="CV_PakoMaxence_Tekou.pdf" target="_blank" class="btn-ghost">
+              <i class="fa-solid fa-file-pdf fa-sm"></i> CV
+            </a>
+            <span class="hero-links-sep"></span>
+            <a href="mailto:tekoumax15@gmail.com" class="hero-social-link" title="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://github.com/maxencelebaron" target="_blank" class="hero-social-link" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/pakomaxencetekou" target="_blank" class="hero-social-link" title="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://scholar.google.com" target="_blank" class="hero-social-link" title="Scholar">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+            <a href="https://x.com/MaxenceT6" target="_blank" class="hero-social-link" title="Twitter / X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </header>
+
+    <!-- ===== Quote ===== -->
+    <section class="hero-quote-section reveal">
+      <blockquote class="hero-quote-text">
+        &ldquo;Planning is bringing the future into the present so that you can do something about it now.&rdquo;
+        <cite class="hero-quote-author">- Alan Lakein</cite>
+      </blockquote>
+    </section>
+
+    <!-- ===== 01 / About ===== -->
+    <section class="home-section reveal">
+      <div>
+        <p class="section-eyebrow">01 / About</p>
+        <h2 class="home-section-title">Biography</h2>
+      </div>
+      <div class="reveal reveal-d1">
+        <div class="item-description">
+          <p style="margin-bottom: 14px;">
+            Prior to my PhD, I completed two years of engineering studies at
+            <a href="https://www.ensai.fr/en/" target="_blank" rel="noopener">ENSAI</a>,
+            a French engineering school offering multidisciplinary training in applied mathematics (statistics),
+            computer science (machine learning and AI), and economics. I then pursued the
+            <a href="https://www.master-mva.com/" target="_blank" rel="noopener">MVA Master's degree</a>
+            at <a href="https://ens-paris-saclay.fr/" target="_blank" rel="noopener">ENS Paris-Saclay</a>,
+            a renowned research-oriented master's program in applied mathematics and AI.
+          </p>
+          <p>
+            I grew up in Togo, where I pursued my studies while also playing basketball
+            at the national level during high school. I then moved to France to undertake
+            three years of intensive training in mathematics, physics, and computer science.
+            This prepared me for the highly competitive entrance examinations to France's
+            leading engineering schools, through which I was admitted to ENSAI.
+          </p>
+        </div>
+        <div class="tags" style="margin-top: 20px;">
+          <span class="tag">Online Learning</span>
+          <span class="tag">Reinforcement Learning</span>
+          <span class="tag">Optimization</span>
+          <span class="tag">Deep Learning</span>
+        </div>
+        <div class="bio-logos">
+          <img src="assets/Ensai-logo.png" alt="ENSAI">
+          <img src="assets/Logo-ENS-Paris-Saclay.png" alt="ENS Paris-Saclay">
+          <img src="assets/mva_logo.png" alt="MVA">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 02 / Research ===== -->
+    <section class="home-section reveal">
+      <div>
+        <p class="section-eyebrow">02 / Research</p>
+        <h2 class="home-section-title">Selected work</h2>
+        <a href="publications.html" class="home-section-link">All publications →</a>
+      </div>
+      <div>
+        <div class="home-pub reveal reveal-d1">
+          <div class="home-pub-title">Should I train or should I grow? Single-Run Architecture Search by Network Growth</div>
+          <div class="home-pub-meta">S. Douka, A. Davey, S. Rivaud, T. Rudkiewicz, <strong>P. M. Tekou</strong>, et al.</div>
+          <div class="badges" style="margin-top: 7px;">
+            <span class="badge venue">NeurIPS 2026</span>
+            <span class="badge status">Under Review</span>
+          </div>
+        </div>
+        <div class="dashed-divider"></div>
+        <div class="home-pub reveal reveal-d2">
+          <div class="home-pub-title">GrowRA: Growing and Allocating LoRA Rank with a Natural-Gradient Criterion</div>
+          <div class="home-pub-meta">T. Rudkiewicz, H. Mousset, E. Saad, A. Shilova, A. Davey, S. Rivaud, S. Douka, <strong>P. M. Tekou</strong>, et al.</div>
+          <div class="badges" style="margin-top: 7px;">
+            <span class="badge venue">NeurIPS 2026</span>
+            <span class="badge status">Under Review</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-socials">
+        <a href="mailto:tekoumax15@gmail.com" class="footer-social-link" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/maxencelebaron" target="_blank" class="footer-social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/pakomaxencetekou" target="_blank" class="footer-social-link" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://scholar.google.com" target="_blank" class="footer-social-link" title="Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="https://x.com/MaxenceT6" target="_blank" class="footer-social-link" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p class="footer-status">now: AI Researcher · Centre Inria de l'Université Grenoble Alpes</p>
+      <p class="footer-copy">© 2026 Maxence Tekou &nbsp;·&nbsp; Built with care</p>
+    </div>
+  </footer>
+
+  <script src="canvas.js"></script>
+  <script src="shared.js"></script>
 </body>
-
 </html>

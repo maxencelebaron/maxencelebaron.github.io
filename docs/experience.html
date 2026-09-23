@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <script>
+    (function(){
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience - Maxence TEKOU</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Inter:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div id="progress-bar"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav class="topnav">
+    <div class="nav-left">
+      <a href="index.html" class="nav-brand">Maxence TEKOU</a>
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon icon-moon"></i>
+        <i class="fa-solid fa-sun  icon-sun"></i>
+      </button>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="research.html">Research</a>
+      <a href="cv.html">CV</a>
+      <a href="publications.html">Publications</a>
+      <!-- <a href="talks.html">Talks</a> -->
+      <a href="projects.html">Projects</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="CV_PakoMaxence_Tekou.pdf" target="_blank" class="nav-cta"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header reveal">
+      <div class="section-header">
+<h2><i class="fa-solid fa-briefcase fa-sm"></i> Experience</h2>
+      </div>
+    </div>
+
+    <section>
+      <div class="item reveal reveal-d1">
+        <div class="item-header">
+          <div>
+            <div class="item-title"><span class="role-tag intern">Intern</span> Machine Learning Research Intern</div>
+            <div class="item-subtitle"><i class="fa-solid fa-building-columns fa-xs"></i> Inria TAU Team · Paris-Saclay</div>
+          </div>
+          <div>
+            <div class="item-date">Apr – Sept 2026</div>
+            <div class="phase">[Completed]</div>
+          </div>
+        </div>
+        <div class="item-description">
+          Topics: Convex Optimization, Reinforcement Learning, Neural Architecture Growth
+          <ul style="margin-top: 10px;">
+            <li>Contributed to principled neuron addition criteria based on expressivity bottlenecks for neural architecture growth</li>
+            <li>Extended architecture growth framework to mitigate plasticity loss in deep RL policies</li>
+            <li>Contributed to open-source Python library and improved neural network training efficiency on GPU clusters</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dashed-divider"></div>
+
+      <div class="item reveal reveal-d2">
+        <div class="item-header">
+          <div>
+            <div class="item-title"><span class="role-tag intern">Intern</span> Data Science Intern</div>
+            <div class="item-subtitle"><i class="fa-solid fa-building fa-xs"></i> Crédit Mutuel Arkéa · Brest</div>
+          </div>
+          <div>
+            <div class="item-date">May – Aug 2025</div>
+            <div class="phase">[Completed]</div>
+          </div>
+        </div>
+        <div class="item-description">
+          Topics: Machine Learning, Clustering, Credit Risk Modeling
+          <ul style="margin-top: 10px;">
+            <li>Segmented 2600 loan contracts using K-means clustering to identify distinct repayment behavioral patterns</li>
+            <li>Built decision tree and random forest classifiers for high recovery potential defaulted accounts</li>
+            <li>Developed probabilistic recovery scoring model ranking defaulted loans by expected recovery amount</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-socials">
+        <a href="mailto:tekoumax15@gmail.com" class="footer-social-link" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/maxencelebaron" target="_blank" class="footer-social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/pakomaxencetekou" target="_blank" class="footer-social-link" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://scholar.google.com" target="_blank" class="footer-social-link" title="Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="https://x.com/MaxenceT6" target="_blank" class="footer-social-link" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p class="footer-status">now: research engineer · inria paris-saclay</p>
+      <p class="footer-copy">© 2026 Maxence Tekou &nbsp;·&nbsp; Built with care</p>
+    </div>
+  </footer>
+
+  <script src="canvas.js"></script>
+  <script src="shared.js"></script>
+</body>
+</html>
