@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 
 <head>
@@ -40,13 +40,17 @@
       <!-- <a href="talks.html">Talks</a> -->
       <a href="projects.html">Projects</a>
       <a href="teaching.html">Teaching</a>
+      <a href="CV_PakoMaxence_Tekou.pdf" target="_blank" class="nav-cta"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
     </div>
+  <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
+    <i class="fa-solid fa-bars"></i>
+  </button>
   </nav>
 
   <div class="container">
 
     <!-- ===== Experience ===== -->
-    <div class="page-header reveal">
+    <!-- <div class="page-header reveal">
       <div class="section-header">
         <h2><i class="fa-solid fa-briefcase fa-sm"></i> Experience</h2>
       </div>
@@ -96,10 +100,10 @@
           </ul>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- ===== Education ===== -->
-    <div class="page-header reveal" style="margin-top: 48px;">
+    <!-- <div class="page-header reveal" style="margin-top: 48px;">
       <div class="section-header">
         <h2><i class="fa-solid fa-graduation-cap fa-sm"></i> Education</h2>
       </div>
@@ -148,10 +152,10 @@
           Rigorous training in Mathematics, Physics, and Computer Science.
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- ===== Skills ===== -->
-    <div class="page-header reveal" style="margin-top: 48px;">
+    <!-- <div class="page-header reveal" style="margin-top: 48px;">
       <div class="section-header">
         <h2><i class="fa-solid fa-wrench fa-sm"></i> Skills</h2>
       </div>
@@ -202,7 +206,282 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+
+    <!-- ===== CV LAYOUT ===== -->
+    <div class="cv-grid">
+
+      <!-- LEFT: sticky aside -->
+      <aside class="cv-aside reveal">
+        <h1>Curriculum Vitae</h1>
+        <dl class="cv-info">
+          <div class="cv-info-row">
+            <dt>Full Name</dt>
+            <dd>Pako Maxence Tekou</dd>
+          </div>
+          <div class="cv-info-row">
+            <dt>Title</dt>
+            <dd>PhD Student (AI Researcher) @ GHOST Team (Inria · Université Grenoble Alpes · CNRS )</dd>
+          </div>
+          <div class="cv-info-row">
+            <dt>Location</dt>
+            <dd>Grenoble, France</dd>
+          </div>
+          <div class="cv-info-row">
+            <dt>Languages</dt>
+            <dd>French (Native), English (C1)</dd>
+          </div>
+          <div class="cv-info-row">
+            <dt>Programming Languages</dt>
+            <dd>Python, Java, R, SQL</dd>
+          </div>
+          <div class="cv-info-row">
+            <dt>Tools</dt>
+            <dd>Git, PyTorch, MLflow, Docker, Hydra</dd>
+          </div>
+        </dl>
+        <nav class="cv-nav">
+          <ul>
+            <li><a href="#research-interests"><span class="nav-num">01</span><span class="nav-label">Research Interests</span></a></li>
+            <li><a href="#experience"><span class="nav-num">02</span><span class="nav-label">Experience</span></a></li>
+            <li><a href="#education"><span class="nav-num">03</span><span class="nav-label">Education</span></a></li>
+            <li><a href="#extracurricular"><span class="nav-num">04</span><span class="nav-label">Extracurricular</span></a></li>
+            <li><a href="#skills"><span class="nav-num">05</span><span class="nav-label">Skills</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- RIGHT: main content -->
+      <div class="cv-main">
+
+        <!-- 01 / Research Interests -->
+        <section id="research-interests">
+          <p class="section-eyebrow">01 / Research Interests</p>
+          <div class="tags" style="margin-top: 16px;">
+            <span class="tag">Online Learning</span>
+            <span class="tag">Reinforcement Learning</span>
+            <span class="tag">Optimization</span>
+            <span class="tag">Deep Learning</span>
+          </div>
+        </section>
+
+        <!-- 02 / Experience -->
+        <section id="experience">
+          <p class="section-eyebrow">02 / Experience</p>
+
+          <div class="item reveal reveal-d1">
+            <div class="item-header">
+              <div>
+                <div class="item-title"><span class="role-tag intern">Internship</span> AI Researcher</div>
+                <div class="item-subtitle"><i class="fa-solid fa-building-columns fa-xs"></i> <a href="https://team.inria.fr/tau2/" target="_blank">TAU Team (Inria · CNRS · Université Paris-Saclay)</a></div>
+              </div>
+              <div>
+                <div class="item-location">Paris-Saclay, France</div>
+                <div class="item-date">Apr – Sept 2026</div>
+              </div>
+            </div>
+            <div class="item-description">
+              Topics: Convex Optimization, Reinforcement Learning, Neural Architecture Growth
+              <ul style="margin-top: 10px;">
+                <li>Contributed to principled neuron addition criteria based on expressivity bottlenecks for neural architecture growth</li>
+                <li>Extended architecture growth framework to mitigate plasticity loss in deep RL policies</li>
+                <li>Contributed to open-source Python library and improved neural network training efficiency on GPU clusters</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- <div class="dashed-divider"></div> -->
+
+          <div class="item reveal reveal-d2">
+            <div class="item-header">
+              <div>
+                <div class="item-title"><span class="role-tag intern">Internship</span> Data Scientist</div>
+                <div class="item-subtitle"><i class="fa-solid fa-building fa-xs"></i> <a href="https://www.cm-arkea.com/arkea/banque/assurances/j_6/en/home" target="_blank">Crédit Mutuel Arkéa</a></div>
+              </div>
+              <div>
+                <div class="item-location">Brest, France</div>
+                <div class="item-date">May – Aug 2025</div>
+              </div>
+            </div>
+            <div class="item-description">
+              Topics: Machine Learning, Clustering, Credit Risk Modeling
+              <ul style="margin-top: 10px;">
+                <li>Segmented 2600 loan contracts using K-means clustering to identify distinct repayment behavioral patterns</li>
+                <li>Built decision tree and random forest classifiers for high recovery potential defaulted accounts</li>
+                <li>Developed probabilistic recovery scoring model ranking defaulted loans by expected recovery amount</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 02 / Education -->
+        <section id="education">
+          <p class="section-eyebrow">03 / Education</p>
+
+          <div class="item reveal reveal-d1">
+            <div class="item-header">
+              <div>
+                <div class="item-title">M2 MVA - Mathématiques, Vision, Apprentissage</div>
+                <div class="item-subtitle"><i class="fa-solid fa-graduation-cap fa-xs"></i> École Normale Supérieure Paris-Saclay</div>
+              </div>
+              <div>
+                <div class="item-location">Paris, France</div>
+                <div class="item-date">Sept 2025 – Sept 2026</div>
+              </div>
+            </div>
+            <div class="item-description">
+              Admitted via competitive selection from ENSAI's engineering programme.
+              <ul class="edu-list">
+                <li>Topics: Convex Optimization, Signal Processing, Optimal Transport, Reinforcement Learning, Stochastic Calculus, Generative Modelling, Representation Learning, Time Series Analysis, Graphs in Machine Learning, Computational Statistics, LLM</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="item reveal reveal-d2">
+            <div class="item-header">
+              <div>
+                <div class="item-title">Cycle Ingénieur - Engineering Programme</div>
+                <div class="item-subtitle"><i class="fa-solid fa-graduation-cap fa-xs"></i> ENSAI · Rennes</div>
+              </div>
+              <div>
+                <div class="item-location">Rennes, France</div>
+                <div class="item-date">Sept 2023 – Sept 2025</div>
+              </div>
+            </div>
+            <div class="item-description">
+              Bachelor's and Master's degree in Applied Mathematics and Computer Science.
+              <ul class="edu-list">
+                <li>Topics: Statistical and Deep Learning, Natural Language Processing, Object-Oriented Programming, Algorithms and Data Structures, Stochastic Processes, Econometrics, Macroeconomics and Microeconomics</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="item reveal reveal-d3">
+            <div class="item-header">
+              <div>
+                <div class="item-title">CPGE MPSI / MP★</div>
+                <div class="item-subtitle"><i class="fa-solid fa-school fa-xs"></i> Lycée Albert Schweitzer · Mulhouse</div>
+              </div>
+              <div>
+                <div class="item-location">Mulhouse, France</div>
+                <div class="item-date">Sept 2020 – Sept 2023</div>
+              </div>
+            </div>
+            <div class="item-description">
+              French Preparatory Classes for Elite Graduate Schools ('Grandes écoles').
+              <ul class="edu-list">
+                <li>Topics: Mathematics, Physics and Computer Science</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 04 / Extracurricular Activities -->
+        <section id="extracurricular">
+          <p class="section-eyebrow">04 / Extracurricular Activities</p>
+
+          <div class="item reveal reveal-d1">
+            <div class="item-header">
+              <div>
+                <div class="item-title"><!-- Role / Title --></div>
+                <div class="item-subtitle"><!-- Organization · City, Country --></div>
+              </div>
+              <div class="item-date"><!-- Month Year – Month Year --></div>
+            </div>
+            <div class="item-description">
+              <ul style="margin-top: 10px;">
+                <li><!-- Description bullet --></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- <div class="dashed-divider"></div> -->
+
+          <div class="item reveal reveal-d2">
+            <div class="item-header">
+              <div>
+                <div class="item-title"><!-- Role / Title --></div>
+                <div class="item-subtitle"><!-- Organization · City, Country --></div>
+              </div>
+              <div class="item-date"><!-- Month Year – Month Year --></div>
+            </div>
+            <div class="item-description">
+              <ul style="margin-top: 10px;">
+                <li><!-- Description bullet --></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- <div class="dashed-divider"></div> -->
+
+          <div class="item reveal reveal-d3">
+            <div class="item-header">
+              <div>
+                <div class="item-title"><!-- Role / Title --></div>
+                <div class="item-subtitle"><!-- Organization · City, Country --></div>
+              </div>
+              <div class="item-date"><!-- Month Year – Month Year --></div>
+            </div>
+            <div class="item-description">
+              <ul style="margin-top: 10px;">
+                <li><!-- Description bullet --></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 05 / Skills -->
+        <section id="skills">
+          <p class="section-eyebrow">05 / Skills</p>
+
+          <div class="item reveal reveal-d1">
+            <div class="skill-group">
+              <div class="skill-label"><i class="fa-solid fa-earth-europe fa-xs"></i> Languages</div>
+              <div class="tags">
+                <span class="tag">French (Native)</span>
+                <span class="tag">English (Upper-Intermediate)</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <div class="skill-label"><i class="fa-solid fa-code fa-xs"></i> Programming</div>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">NumPy</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Java</span>
+                <span class="tag">R</span>
+                <span class="tag">SQL</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <div class="skill-label"><i class="fa-solid fa-wrench fa-xs"></i> Tools & Infrastructure</div>
+              <div class="tags">
+                <span class="tag">MLOps (W&B, MLflow)</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Hydra</span>
+                <span class="tag">Git</span>
+                <span class="tag">GPU Clusters</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <div class="skill-label"><i class="fa-solid fa-brain fa-xs"></i> Specializations</div>
+              <div class="tags">
+                <span class="tag">Deep Learning</span>
+                <span class="tag">Reinforcement Learning</span>
+                <span class="tag">Optimization</span>
+                <span class="tag">Neural Networks</span>
+                <span class="tag">Statistical Learning</span>
+                <span class="tag">Signal Processing</span>
+                <span class="tag">Stochastic Processes</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /cv-main -->
+    </div><!-- /cv-grid -->
 
   </div>
 
